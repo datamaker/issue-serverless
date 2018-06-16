@@ -1,0 +1,39 @@
+```json
+[
+  {
+    "id": "9ee17060-7135-11e8-a8c0-dd9745de9edf",
+    "checked": false,
+    "createdAt": 1529133574758,
+    "updatedAt": 1529133574758,
+    "title": "이재명 김부선 스캔들",
+    "description": "이재명의 스캔들 이슈의 모음입니다.",
+    "category": "정치",
+    "image": "http://img.hani.co.kr/imgdb/resize/2018/0611/00503287_20180611.JPG",
+    "articles": [{
+      "id": "9ee17060-7135-11e8-a8c0-dd9745de9edf",
+      "time": "2018-06-11 17:50",
+      "title": "이재명과 김부선, 누가 거짓말하나",
+      "article": "http://www.hani.co.kr/arti/society/area/848621.html",
+      "position": "left",
+      "createdAt": 1529133574758,
+      "updatedAt": 1529133574758
+    }, {
+      "id": "9ee17060-7135-11e8-a8c0-dd9745de9edf",
+      "time": "2018년 06월 15일 14시 36분",
+      "title": "영화배우 김부선이 이재명의 당선에 대해 입을 열었다",
+      "article": "https://www.huffingtonpost.kr/entry/story_kr_5b2344fbe4b0a0a5277a2f15",
+      "position": "right",
+      "createdAt": 1529133574758,
+      "updatedAt": 1529133574758
+    }, {
+      "id": "9ee17060-7135-11e8-a8c0-dd9745de9edf",
+      "time": "2018년 06월 12일",
+      "title": "이재명-김부선 논란의 본질",
+      "article": "http://www.munhwa.com/news/view.html?no=2018061201033830130001",
+      "position": "left",
+      "createdAt": 1529133574758,
+      "updatedAt": 1529133574758
+    }]
+  }
+]
+```
