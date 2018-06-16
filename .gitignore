@@ -1,3 +1,7 @@
 .idea
 package-lock.json
 node_modules
+.serverless/serverless-state.json
+.serverless/issue-serverless-rest-api.zip
+.serverless/cloudformation-template-update-stack.json
+.serverless/cloudformation-template-create-stack.json

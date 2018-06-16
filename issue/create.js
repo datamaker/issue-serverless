@@ -48,6 +48,7 @@ module.exports.create = (event, context, callback) => {
     // create a response
     const response = {
       statusCode: 200,
+      headers: { 'Access-Control-Allow-Method' : '*' },
       body: JSON.stringify(params.Item),
     };
     callback(null, response);
