@@ -3,13 +3,23 @@
 const AWS = require('aws-sdk'); // eslint-disable-line import/no-extraneous-dependencies
 
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
-const params = {
-  TableName: process.env.DYNAMODB_TABLE,
-};
+
 
 module.exports.list = (event, context, callback) => {
   // fetch all article from the database
-  console.log('event!!!', event);
+  console.log('event!!!', event, event.queryStringParameters);
+
+  // query
+  const queryParams = event.queryStringParameters;
+
+  if (queryParams) {
+      console.log('queryParams!!!', queryParams.sort, queryParams.category, queryParams.keyword);
+  }
+
+  const params = {
+      TableName: process.env.DYNAMODB_TABLE,
+  };
+
   dynamoDb.scan(params, (error, result) => {
     // handle potential errors
     if (error) {
