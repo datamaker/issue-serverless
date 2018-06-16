@@ -2,6 +2,16 @@ service: issue-serverless-rest-api
 
 frameworkVersion: ">=1.1.0 <2.0.0"
 
+plugins:
+  - serverless-domain-manager
+
+custom:
+  customDomain:
+    domainName: serverless.arteight.co.kr
+    basePath: v1
+    stage: ${self:provider.stage}
+    createRoute53Record: true
+
 provider:
   name: aws
   runtime: nodejs6.10
@@ -59,35 +69,6 @@ functions:
           path: issue/{id}
           method: delete
           cors: true
-
-  auth:
-    handler: auth/auth.authorize
-
-  publicEndpoint:
-    handler: auth/handler.publicEndpoint
-    events:
-      - http:
-          path: auth/public
-          method: get
-          integration: lambda
-          cors: true
-
-  privateEndpoint:
-    handler: auth/handler.privateEndpoint
-    events:
-      - http:
-          path: auth/private
-          method: get
-          authorizer: auth
-          cors:
-            origins:
-              - '*'
-            headers:
-              - Content-Type
-              - X-Amz-Date
-              - Authorization
-              - X-Api-Key
-              - X-Amz-Security-Token
 
   create:
     handler: todos/create.create

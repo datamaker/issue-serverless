@@ -188,3 +188,41 @@ Custom Authorizers allow you to run an AWS Lambda Function via API Gateway befor
   curl --header "Authorization: bearer <id_token>" https://{api}.execute-api.{region}.amazonaws.com/api/private
   ```
 
+
+  ```
+  gwonjeongbin-ui-iMac:issue-serverless dm$ sls create_domain
+  Serverless: 'serverless.arteight.co.kr' was created/updated. New domains may take up to 40 minutes to be initialized.
+
+
+
+  auth:
+    handler: auth/auth.authorize
+
+  publicEndpoint:
+    handler: auth/handler.publicEndpoint
+    events:
+      - http:
+          path: auth/public
+          method: get
+          integration: lambda
+          cors: true
+
+  privateEndpoint:
+    handler: auth/handler.privateEndpoint
+    events:
+      - http:
+          path: auth/private
+          method: get
+          authorizer: auth
+          cors:
+            origins:
+              - '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+
+
+  ```

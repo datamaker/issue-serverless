@@ -11,5 +11,8 @@
     "jsonwebtoken": "^7.1.9",
     "jwk-to-pem": "^1.2.6",
     "request": "^2.82.0"
+  },
+  "devDependencies": {
+    "serverless-domain-manager": "^2.4.0"
   }
 }
