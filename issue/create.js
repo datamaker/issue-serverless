@@ -25,6 +25,7 @@ module.exports.create = (event, context, callback) => {
       title: data.title,
       description: data.description || "",
       image: data.image || "",
+      category: data.category || "",
       articles: data.articles || [],
       checked: false,
       createdAt: timestamp,

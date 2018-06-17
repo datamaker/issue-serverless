@@ -28,17 +28,19 @@ module.exports.update = (event, context, callback) => {
       '#article_title': 'title',
       '#article_description': 'description',
       '#article_image': 'image',
+      '#article_category': 'category',
       '#article_articles': 'articles',
     },
     ExpressionAttributeValues: {
       ':title': data.title,
       ':description': data.description || "",
       ':image': data.image || "",
+      ':category': data.category || "",
       ':articles': data.articles || [],
       ':checked': data.checked,
       ':updatedAt': timestamp,
     },
-    UpdateExpression: 'SET #article_title = :title, #article_description = :description, ' +
+    UpdateExpression: 'SET #article_title = :title, #article_description = :description, #article_category = :category, ' +
     '#article_image = :image, #article_articles = :articles, checked = :checked, updatedAt = :updatedAt',
     ReturnValues: 'ALL_NEW',
   };

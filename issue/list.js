@@ -13,7 +13,7 @@ module.exports.list = (event, context, callback) => {
   const queryParams = event.queryStringParameters;
 
   if (queryParams) {
-      console.log('queryParams!!!', queryParams.sort, queryParams.category, queryParams.keyword);
+      console.log('queryParams!!!', queryParams.category, queryParams.keyword);
   }
 
   const params = {
