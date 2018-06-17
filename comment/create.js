@@ -13,15 +13,17 @@ module.exports.create = (event, context, callback) => {
     callback(null, {
       statusCode: 400,
       headers: { 'Content-Type': 'text/plain' },
-      body: 'Couldn\'t create the todo item.',
+      body: 'Couldn\'t create the comment item.',
     });
     return;
   }
 
   const params = {
-    TableName: process.env.DYNAMODB_TABLE,
+    TableName: process.env.DYNAMODB_TABLE_COMMENT,
     Item: {
       id: uuid.v1(),
+      username: data.username,
+      issueId: data.issueId,
       text: data.text,
       checked: false,
       createdAt: timestamp,
@@ -29,7 +31,7 @@ module.exports.create = (event, context, callback) => {
     },
   };
 
-  // write the todo to the database
+  // write the comment to the database
   dynamoDb.put(params, (error) => {
     // handle potential errors
     if (error) {
@@ -37,7 +39,7 @@ module.exports.create = (event, context, callback) => {
       callback(null, {
         statusCode: error.statusCode || 501,
         headers: { 'Content-Type': 'text/plain' },
-        body: 'Couldn\'t create the todo item.',
+        body: 'Couldn\'t create the comment item.',
       });
       return;
     }
@@ -45,6 +47,7 @@ module.exports.create = (event, context, callback) => {
     // create a response
     const response = {
       statusCode: 200,
+      headers: { 'Access-Control-Allow-Origin' : '*' },
       body: JSON.stringify(params.Item),
     };
     callback(null, response);

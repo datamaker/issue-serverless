@@ -1,0 +1,23 @@
+```json
+[
+  {
+    "text": "정말 알수가 없다!",
+    "username": "데이터메이커",
+    "issueId": "b38811e0-7158-11e8-bfcb-b12df7374b70"
+  }
+]
+``
+
+```json
+[
+  {
+    "id": "9ee17060-7135-11e8-a8c0-dd9745de9edf",
+    "checked": false,
+    "createdAt": 1529133574758,
+    "updatedAt": 1529133574758,
+    "text": "정말 알수가 없다!",
+    "username": "데이터메이커",
+    "issueId": "b38811e0-7158-11e8-bfcb-b12df7374b70",
+  }
+]
+```
